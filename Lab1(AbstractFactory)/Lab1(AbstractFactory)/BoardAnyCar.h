@@ -7,6 +7,6 @@ class BoardAnyCar
 {
 public:
 	virtual void sitDriver(Driver* driver) = 0;
-	virtual void sitPassengers(std::vector<Passenger> &passengers) = 0;
+	virtual void sitPassengers(std::vector<AbstactPassenger> &passengers) = 0;
 };
 

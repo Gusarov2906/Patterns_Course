@@ -7,9 +7,9 @@
 class ReadyTaxi
 {
 public:
-	std::vector<Passenger> passengers;
+	std::vector<AbstactPassenger> passengers;
 	TaxiDriver* driver;
-	void run(std::vector<Passenger>& passengers);
+	void run(std::vector<AbstactPassenger>& passengers);
 	void setPtrToDriver(Driver* driver);
 	Driver* getPtrToDriver();
 private:

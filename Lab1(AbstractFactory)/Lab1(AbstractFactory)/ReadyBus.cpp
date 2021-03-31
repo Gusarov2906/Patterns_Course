@@ -1,6 +1,6 @@
 #include "ReadyBus.h"
 
-void ReadyBus::run(std::vector<Passenger>& passengers)
+void ReadyBus::run(std::vector<AbstactPassenger>& passengers)
 {
 	if (this->passengers.empty())
 	{

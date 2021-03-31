@@ -1,4 +1,5 @@
 #include "FIO.h"
+#include <string>
 
 void FIO::output()
 {

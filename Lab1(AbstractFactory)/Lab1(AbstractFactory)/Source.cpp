@@ -2,6 +2,9 @@
 #include "BusStop.h"
 #include "BoardBus.h"
 #include "BoardTaxi.h"
+#include "BoardPizzaDeliveryGuy.h"
+#include "time.h"
+#include "Pizza.h"
 
 std::string name_and_surname_arr[300] = {
 "Roxie Byrne",
@@ -308,6 +311,7 @@ std::string name_and_surname_arr[300] = {
 int main()
 {
 	srand(time(NULL));
+
 	while (1)
 	{
 		BoardBus busFactory;
@@ -326,7 +330,18 @@ int main()
 		{
 			busStop.passengers.push_back(Passenger(FIO(name_and_surname_arr[rand() % 300])));
 		}
-		//busStop.output();
+
+		//BoardPizzaDeliveryGuy pizzaDeliveryFactory;
+		//std::vector<AbstactPassenger> pizzas;
+		//pizzas.push_back(Pizza("MargeritaSuper0", "Margarita", "Cheese, tomatos and etc."));
+		//pizzas.push_back(Pizza("MargeritaSuper1", "Margarita", "Cheese, tomatos and etc."));
+		//pizzas.push_back(Pizza("MargeritaSuper2", "Margarita", "Cheese, tomatos and etc."));
+		//pizzaDeliveryFactory.getReadyDelivery(&busStop.drivers[rand() % busStop.drivers.size()], pizzas).run(pizzas);
+		// 
+		//pizzaDeliveryFactory.getReadyDelivery(&busStop.drivers[rand() % busStop.drivers.size()], );
+
+
+		busStop.output();
 		bool flag = true;
 		while (flag)
 		{

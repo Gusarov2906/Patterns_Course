@@ -139,29 +139,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractPassenger.cpp" />
     <ClCompile Include="BoardAnyCar.cpp" />
     <ClCompile Include="BoardBus.cpp" />
+    <ClCompile Include="BoardPizzaDeliveryGuy.cpp" />
     <ClCompile Include="BoardTaxi.cpp" />
     <ClCompile Include="BusDriver.cpp" />
     <ClCompile Include="BusStop.cpp" />
+    <ClCompile Include="DeliveryGuy.cpp" />
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="FIO.cpp" />
     <ClCompile Include="Passenger.cpp" />
+    <ClCompile Include="Pizza.cpp" />
     <ClCompile Include="ReadyBus.cpp" />
+    <ClCompile Include="ReadyDelivery.cpp" />
     <ClCompile Include="ReadyTaxi.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="TaxiDriver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractPassenger.h" />
     <ClInclude Include="BoardAnyCar.h" />
     <ClInclude Include="BoardBus.h" />
+    <ClInclude Include="BoardPizzaDeliveryGuy.h" />
     <ClInclude Include="BoardTaxi.h" />
     <ClInclude Include="BusDriver.h" />
     <ClInclude Include="BusStop.h" />
+    <ClInclude Include="DeliveryGuy.h" />
     <ClInclude Include="Driver.h" />
     <ClInclude Include="FIO.h" />
     <ClInclude Include="Passenger.h" />
+    <ClInclude Include="Pizza.h" />
     <ClInclude Include="ReadyBus.h" />
+    <ClInclude Include="ReadyDelivery.h" />
     <ClInclude Include="ReadyTaxi.h" />
     <ClInclude Include="TaxiDriver.h" />
   </ItemGroup>

@@ -1,5 +1,5 @@
 #include "BoardTaxi.h"
-
+#include <algorithm>
 void BoardTaxi::sitDriver(Driver* driverPtr)
 {
 		taxi.driver = nullptr;
@@ -15,7 +15,7 @@ void BoardTaxi::sitDriver(Driver* driverPtr)
 		}
 }
 
-void BoardTaxi::sitPassengers(std::vector<Passenger>& passengers)
+void BoardTaxi::sitPassengers(std::vector<AbstactPassenger>& passengers)
 {
 	taxi.passengers.clear();
 	int size = passengers.size();
@@ -26,7 +26,7 @@ void BoardTaxi::sitPassengers(std::vector<Passenger>& passengers)
 	}
 }
 
-ReadyTaxi BoardTaxi::getReadyTaxi(Driver* driver, std::vector<Passenger>& passengers)
+ReadyTaxi BoardTaxi::getReadyTaxi(Driver* driver, std::vector<AbstactPassenger>& passengers)
 {
 	sitDriver(driver);
 	sitPassengers(passengers);

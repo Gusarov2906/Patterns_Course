@@ -7,7 +7,7 @@ class BusStop
 {
 public:
 	std::vector<Driver> drivers;
-	std::vector<Passenger> passengers;
+	std::vector<AbstactPassenger> passengers;
 	void output();
 };
 

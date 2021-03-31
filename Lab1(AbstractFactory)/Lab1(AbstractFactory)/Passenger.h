@@ -1,21 +1,12 @@
 #pragma once
 #include "FIO.h"
+#include "AbstractPassenger.h"
 
-class Passenger
+class Passenger : public AbstactPassenger
 {
 public:
-	FIO fio = FIO();
+	Passenger(std::string surname, std::string name, std::string patronymic);
+	Passenger(FIO fio);
 
-	Passenger(std::string surname, std::string name, std::string patronymic)
-	{
-		fio.name = name;
-		fio.surname = surname;
-		fio.patronymic = patronymic;
-	}
-
-	Passenger(FIO fio)
-	{
-		this->fio = fio;
-	}
 };
 

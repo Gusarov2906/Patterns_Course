@@ -1,6 +1,6 @@
 #include "ReadyTaxi.h"
 
-void ReadyTaxi::run(std::vector<Passenger>& passengers)
+void ReadyTaxi::run(std::vector<AbstactPassenger>& passengers)
 {
 	if (this->passengers.empty())
 	{
