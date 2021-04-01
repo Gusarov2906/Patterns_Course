@@ -9,6 +9,6 @@ public:
 	Passenger(std::string surname, std::string name, std::string patronymic);
 	Passenger(FIO fio);
 	Passenger(){};
-	void output(){};
+	void output();
 };
 

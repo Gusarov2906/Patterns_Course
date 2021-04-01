@@ -9,6 +9,6 @@ class ReadyDelivery : public Board
 public:
 	std::vector<std::unique_ptr<AbstactPassenger>> passengers;
 	std::unique_ptr<Driver> driver;
-	void run(std::vector<std::unique_ptr<AbstactPassenger>>& passengers);
+	void run();
 };
 

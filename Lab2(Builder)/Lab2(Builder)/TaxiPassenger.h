@@ -8,7 +8,6 @@ public:
 	void output();
 	void outputWithCost();
 	void setLastTripCost(int cost);
-private:
 	bool isChild;
 	int lastTripCost;
 };

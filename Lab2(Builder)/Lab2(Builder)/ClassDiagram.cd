@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AbstactPassenger">
+    <Position X="2" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AbstractPassenger.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Board">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Board.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoardBuilder">
+    <Position X="7.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAABAAAAAAAAAAIAAAAAAAAAAAAQAAACAA=</HashCode>
+      <FileName>BoardBuilder.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusBoardBuilder">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gACAAAACAAAAAAAAABAAAAAIAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>BusBoardBuilder.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusDriver">
+    <Position X="9" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAQAAQAAAAA=</HashCode>
+      <FileName>BusDriver.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusPassenger">
+    <Position X="0.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAABAAQIAAAIAABAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusPassenger.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusStop">
+    <Position X="10.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAQAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusStop.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ControlOffice">
+    <Position X="13" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ControlOffice.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Driver">
+    <Position X="7.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAQAQAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Driver.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FIO">
+    <Position X="10.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAAAAAAAAAAAAAAAAEAAAACAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FIO.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Passenger">
+    <Position X="2" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Passenger.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReadyBus">
+    <Position X="1.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABgAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReadyBus.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReadyDelivery">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABgAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReadyDelivery.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReadyTaxi">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABgAAAIAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReadyTaxi.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiBoardBulder">
+    <Position X="10.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAACAAAABAgAAAAAAAAIAAAAAAAAAAAAQAAQAAA=</HashCode>
+      <FileName>TaxiBoardBulder.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiDriver">
+    <Position X="5.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAQCAAAAAAA=</HashCode>
+      <FileName>TaxiDriver.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiPassenger">
+    <Position X="3" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQIAAAIAABAAAAACAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>TaxiPassenger.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoatBoardBuilder">
+    <Position X="5.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gACAAAACAAAAAAAAABAAAAAIAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>BoatBoardBuilder.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReadyBoat">
+    <Position X="8" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABgAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReadyBoat.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sailor">
+    <Position X="13" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Sailor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
