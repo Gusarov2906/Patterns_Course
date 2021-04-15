@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Pilot">
+    <Position X="9.5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAIAAAAAAABAAAAAACAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Pilot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Airplane">
+    <Position X="20.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACBCAAAAACAAEAAAAAKAAAAAAAgA=</HashCode>
+      <FileName>Airplane.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Passenger">
+    <Position X="7.25" Y="3.75" Width="2" />
+    <InheritanceLine Type="FlightComponent" FixedToPoint="true">
+      <Path>
+        <Point X="14.75" Y="2.623" />
+        <Point X="14.75" Y="3.375" />
+        <Point X="8.333" Y="3.375" />
+        <Point X="8.333" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAABAAAAAACAAAAAAAAIAAAAAAIAA=</HashCode>
+      <FileName>Passenger.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FlightAttendant">
+    <Position X="11.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAABAAAAAACAAAAAAAAIQAAAAAAAA=</HashCode>
+      <FileName>FlightAttendant.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EconomClassPassenger">
+    <Position X="18.5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAIAACBAAAAAACAAAAACAAIAgAAAAAAA=</HashCode>
+      <FileName>EconomClassPassenger.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FirstClassPassenger">
+    <Position X="16.25" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACJAAAAAACAAAAQCAAIAgAAAAAAA=</HashCode>
+      <FileName>FirstClassPassenger.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessClassPassenger">
+    <Position X="14" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACBAAAAAACCAAAACAAIggAAAAAAA=</HashCode>
+      <FileName>BusinessClassPassenger.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FlightComponent">
+    <Position X="13.25" Y="0.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAACBAAAAAACAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>FlightComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FIO">
+    <Position X="17.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAAAAAAAAAAAAAAAAEAAAACAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FIO.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
