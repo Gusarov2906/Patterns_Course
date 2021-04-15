@@ -1,4 +1,5 @@
 #include "Airplane.h"
+#include <string>
 
 Airplane::Airplane(std::string name, int id)
 {

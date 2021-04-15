@@ -1,4 +1,5 @@
 #include "Airplane.h"
+#include <ctime>
 
 std::string name_and_surname_arr[300] = {
 "Roxie Byrne",
@@ -309,17 +310,19 @@ int main()
 	srand(time(NULL));
 
 	Airplane airplane("Boeing 777X", 1);
-
+	Crew crew = Crew("A Team");
 	for (int i = 0; i < 2; i++) 
 	{
-		airplane.addComponent(new Pilot(FIO(name_and_surname_arr[rand() % 300])));
+		crew.addComponent(new Pilot(FIO(name_and_surname_arr[rand() % 300])));
 	}
 
 	for (int i = 0; i < 6; i++)
 	{
-		airplane.addComponent(new FlightAttendant(FIO(name_and_surname_arr[rand() % 300])));
+		crew.addComponent(new FlightAttendant(FIO(name_and_surname_arr[rand() % 300])));
 	}
 	
+	airplane.addComponent(&crew);
+
 	randSize = rand() % 10 + 1;
 	for (int i = 0; i < randSize; i++)
 	{

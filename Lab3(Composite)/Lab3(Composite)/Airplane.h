@@ -2,11 +2,13 @@
 #include "FlightComponent.h"
 #include <iostream>
 #include <vector>
+#include <string>
 #include "Pilot.h"
 #include "FlightAttendant.h"
 #include "BusinessClassPassenger.h"
 #include "FirstClassPassenger.h"
 #include "EconomClassPassenger.h"
+#include "Crew.h"
 
 class Airplane: public FlightComponent
 {

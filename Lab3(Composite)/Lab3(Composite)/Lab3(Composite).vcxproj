@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="Airplane.h" />
     <ClInclude Include="BusinessClassPassenger.h" />
+    <ClInclude Include="Crew.h" />
     <ClInclude Include="EconomClassPassenger.h" />
     <ClInclude Include="FIO.h" />
     <ClInclude Include="FirstClassPassenger.h" />
@@ -152,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="Airplane.cpp" />
     <ClCompile Include="BusinessClassPassenger.cpp" />
+    <ClCompile Include="Crew.cpp" />
     <ClCompile Include="EconomClassPassenger.cpp" />
     <ClCompile Include="FIO.cpp" />
     <ClCompile Include="FirstClassPassenger.cpp" />
@@ -160,6 +162,9 @@
     <ClCompile Include="Passenger.cpp" />
     <ClCompile Include="Pilot.cpp" />
     <ClCompile Include="Source.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
