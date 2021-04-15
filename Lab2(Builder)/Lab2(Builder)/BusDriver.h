@@ -7,7 +7,5 @@ public:
 	char getDrivingLicence();
 	void setDrivingLicence(char licence);
 	BusDriver() {};
-private:
-	char drivingLicence;
 };
 

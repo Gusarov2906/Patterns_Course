@@ -1,47 +1,65 @@
 #include "TaxiBoardBulder.h"
 
-void TaxiBoardBulder::sitDriver(Driver* driver)
+void TaxiBoardBulder::sitDriver(std::unique_ptr<Driver> driver)
 {
 	taxi.driver = nullptr;
 	if (driver->onTrip == true)
 		std::cout << "Driver is busy" << std::endl;
 	else
 	{
-		taxi.setPtrToDriver(driver);
-		taxi.driver = new TaxiDriver();
-		taxi.driver->fio = driver->fio;
-		taxi.driver->setDrivingLicence(driver->drivingLicence);
-		driver->onTrip = true;
+		taxi.driver = std::unique_ptr<TaxiDriver>(static_cast<TaxiDriver*>(driver.release()));
+		taxi.driver->onTrip = true;
 	}
 }
 
-void TaxiBoardBulder::sitPassengers(std::vector<AbstactPassenger>& passengers)
+void TaxiBoardBulder::sitPassengers(std::vector<std::unique_ptr<AbstactPassenger>>& passengers)
 {
 	taxi.passengers.clear();
 	int size = passengers.size();
-	for (int i = 0; i < std::min(size, 4); i++)
+	int num = 0;
+	for (int i = 0; (i < size & num < 4); i++)
 	{
-		if (typeid(passengers[i]).name() == typeid(TaxiPassenger).name())
+		if (passengers[i])
 		{
-			taxi.passengers.push_back(reinterpret_cast<TaxiPassenger&>(passengers.back()));
-			passengers.pop_back();
+			if (typeid(*(passengers.at(i).get())).name() == typeid(TaxiPassenger).name())
+			{
+				taxi.passengers.push_back(std::unique_ptr<TaxiPassenger>(static_cast<TaxiPassenger*>(passengers[i].release())));
+				if (taxi.passengers.back()->isChild == 1)
+				{
+					taxi.numOfChildSeats--;
+					if (taxi.numOfChildSeats < 0)
+					{
+						passengers[i] = std::unique_ptr<AbstactPassenger>(static_cast<AbstactPassenger*>(taxi.passengers.back().release()));
+							taxi.passengers.pop_back();
+							num--;
+					}
+				}
+				num++;
+			}
 		}
 	}
 }
 
+TaxiBoardBulder::TaxiBoardBulder()
+{
+	taxi = ReadyTaxi();
+}
+
 void TaxiBoardBulder::addChildSeat(int number)
 {
+	this->taxi.numOfChildSeats = number;
 }
 
-
-ReadyTaxi TaxiBoardBulder::getReadyTaxi(Driver* driver, std::vector<AbstactPassenger>& passengers)
+ReadyTaxi* TaxiBoardBulder::getReadyTaxi(std::unique_ptr<Driver> driver, std::vector<std::unique_ptr<AbstactPassenger>>& passengers)
 {
-	sitDriver(driver);
+	sitDriver(std::move(driver));
+	addChildSeat(1);
 	sitPassengers(passengers);
-	return taxi;
+	return &taxi;
 }
 
-Board* TaxiBoardBulder::getBoard()
+Board * TaxiBoardBulder::getBoard()
 {
 	return &taxi;
 }
+

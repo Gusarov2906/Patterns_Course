@@ -1,7 +1,10 @@
 #include <iostream>
 #include "ControlOffice.h"
 #include "BusBoardBuilder.h"
+#include "TaxiBoardBulder.h"
+#include "BoatBoardBuilder.h"
 #include "BusStop.h"
+#include "Sailor.h"
 
 
 std::string name_and_surname_arr[300] = {
@@ -310,6 +313,8 @@ int main()
 {
 	ControlOffice controlOffice;
 	BusBoardBuilder bBuilder;
+	TaxiBoardBulder tBuilder;
+	BoatBoardBuilder boatBuilder;
 	BusStop busStop;
 
 	int nd, np;
@@ -321,15 +326,25 @@ int main()
 	{
 		busStop.drivers.push_back(std::make_unique<Driver>(FIO(name_and_surname_arr[rand() % 300]), 'b'));
 	}
-	for (int i = 0; i < np; i++)
+	for (int i = 0; i < np/4; i++)
 	{
+		busStop.passengers.push_back(std::make_unique<Passenger>(FIO(name_and_surname_arr[rand() % 300])));
 		busStop.passengers.push_back(std::make_unique<BusPassenger>(FIO(name_and_surname_arr[rand() % 300]),false,false));
+		busStop.passengers.push_back(std::make_unique<TaxiPassenger>(FIO(name_and_surname_arr[rand() % 300]), false));
+		busStop.passengers.push_back(std::make_unique<TaxiPassenger>(FIO(name_and_surname_arr[rand() % 300]), true));
 	}
 
 	busStop.output();
-
-	Board* tmp = controlOffice.getReadyBoard(bBuilder, std::move(busStop.drivers[0]), busStop.passengers);
-	//ReadyBus rb = reinterpret_cast<ReadyBus&> (tmp);
-	//rb.run(busStop.passengers);
+	
+	Board* tmp1 = controlOffice.getReadyBoard(bBuilder, std::move(busStop.drivers[1]), busStop.passengers);
+	Board* tmp2 = controlOffice.getReadyBoard(tBuilder, std::move(busStop.drivers[0]), busStop.passengers);
+	Board* tmp3 = controlOffice.getReadyBoard(boatBuilder, std::move(busStop.drivers[2]), std::make_unique<Sailor>(FIO(name_and_surname_arr[rand() % 300])), busStop.passengers);
+	ReadyBus* rb = reinterpret_cast<ReadyBus*> (tmp1);
+	rb->run();
+	ReadyTaxi* rt = reinterpret_cast<ReadyTaxi*> (tmp2);
+	rt->run();
+	ReadyBoat* rbb = reinterpret_cast<ReadyBoat*> (tmp3);
+	rbb->run();
+	busStop.output();
 	return 0;
 }

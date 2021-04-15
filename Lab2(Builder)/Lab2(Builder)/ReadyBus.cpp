@@ -1,11 +1,11 @@
 #include "ReadyBus.h"
 
-void ReadyBus::run(std::vector<AbstactPassenger>& passengers)
+void ReadyBus::run()
 {
+	std::cout << std::endl;
 	if (this->passengers.empty())
 	{
 		std::cout << "Bus not run. No passengers!" << std::endl;
-		getPtrToDriver()->onTrip = false;
 	}
 	else if (driver == nullptr)
 	{
@@ -13,33 +13,26 @@ void ReadyBus::run(std::vector<AbstactPassenger>& passengers)
 		int size = this->passengers.size();
 		for (int i = 0; i < size; i++)
 		{
-			passengers.push_back(this->passengers.back());
 			this->passengers.pop_back();
 		}
 	}
 	else if (driver->getDrivingLicence() != 'b')
 	{
 		std::cout << "Bus not run. Not valid licence of driver!" << std::endl;
-		getPtrToDriver()->onTrip = false;
 		int size = this->passengers.size();
 		for (int i = 0; i < size; i++)
 		{
-			passengers.push_back(this->passengers.back());
 			this->passengers.pop_back();
 		}
 	}
 	else
 	{
 		std::cout << "Bus run)))" << std::endl;
+		for (int i = 0; i < this->passengers.size(); i++)
+		{
+			this->passengers[i].get()->output();
+			std::cout << std::endl;
+		}
 	}
 }
 
-void ReadyBus::setPtrToDriver(Driver* driver)
-{
-	this->ptrToDriver = driver;
-}
-
-Driver* ReadyBus::getPtrToDriver()
-{
-	return this->ptrToDriver;
-}

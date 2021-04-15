@@ -142,20 +142,19 @@
     <ClCompile Include="AbstractPassenger.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="BoardBuilder.cpp" />
+    <ClCompile Include="BoatBoardBuilder.cpp" />
     <ClCompile Include="BusBoardBuilder.cpp" />
     <ClCompile Include="BusDriver.cpp" />
     <ClCompile Include="BusPassenger.cpp" />
     <ClCompile Include="BusStop.cpp" />
     <ClCompile Include="ControlOffice.cpp" />
-    <ClCompile Include="DeliveryGuy.cpp" />
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="FIO.cpp" />
     <ClCompile Include="Passenger.cpp" />
-    <ClCompile Include="Pizza.cpp" />
-    <ClCompile Include="PizzaDeliveryBuilder.cpp" />
+    <ClCompile Include="ReadyBoat.cpp" />
     <ClCompile Include="ReadyBus.cpp" />
-    <ClCompile Include="ReadyDelivery.cpp" />
     <ClCompile Include="ReadyTaxi.cpp" />
+    <ClCompile Include="Sailor.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="TaxiBoardBulder.cpp" />
     <ClCompile Include="TaxiDriver.cpp" />
@@ -165,23 +164,26 @@
     <ClInclude Include="AbstractPassenger.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="BoardBuilder.h" />
+    <ClInclude Include="BoatBoardBuilder.h" />
     <ClInclude Include="BusBoardBuilder.h" />
     <ClInclude Include="BusDriver.h" />
     <ClInclude Include="BusPassenger.h" />
     <ClInclude Include="BusStop.h" />
     <ClInclude Include="ControlOffice.h" />
-    <ClInclude Include="DeliveryGuy.h" />
     <ClInclude Include="Driver.h" />
     <ClInclude Include="FIO.h" />
     <ClInclude Include="Passenger.h" />
-    <ClInclude Include="Pizza.h" />
-    <ClInclude Include="PizzaDeliveryBuilder.h" />
+    <ClInclude Include="ReadyBoat.h" />
     <ClInclude Include="ReadyBus.h" />
     <ClInclude Include="ReadyDelivery.h" />
     <ClInclude Include="ReadyTaxi.h" />
+    <ClInclude Include="Sailor.h" />
     <ClInclude Include="TaxiBoardBulder.h" />
     <ClInclude Include="TaxiDriver.h" />
     <ClInclude Include="TaxiPassenger.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

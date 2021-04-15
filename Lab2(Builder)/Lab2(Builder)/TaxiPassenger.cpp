@@ -21,13 +21,13 @@ TaxiPassenger::TaxiPassenger(FIO fio, bool isChild)
 void TaxiPassenger::output()
 {
 	this->fio.output();
-	std::cout << " age: " << this->isChild;
+	std::cout << " isChild: " << this->isChild;
 }
 
 void TaxiPassenger::outputWithCost()
 {
 	this->fio.output();
-	std::cout << " age: " << this->isChild << " last trip cost = " << this->lastTripCost;
+	std::cout << " isChild: " << this->isChild << " last trip cost = " << this->lastTripCost;
 }
 
 void TaxiPassenger::setLastTripCost(int cost)

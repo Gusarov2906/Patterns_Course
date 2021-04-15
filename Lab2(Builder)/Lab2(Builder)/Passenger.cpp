@@ -14,3 +14,8 @@ Passenger::Passenger(FIO fio)
 	this->fio.patronymic = fio.patronymic;
 }
 
+void Passenger::output()
+{
+	this->fio.output();
+}
+
