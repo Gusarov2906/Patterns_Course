@@ -8,6 +8,11 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->dragFrame->addImage(QSize(128,128),"aaa");
+    ui->dragFrame->getImage(0)->move(200,0);
+    ui->dragFrame->addImage(QSize(64,64),"bbb");
+    ui->dragFrame->getImage(0)->move(290,0);
+    ui->dragFrame->getImage(0)->draw(0,0);
 }
 
 
