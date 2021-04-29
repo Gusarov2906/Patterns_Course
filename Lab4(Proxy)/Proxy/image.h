@@ -3,20 +3,13 @@
 
 #include <QWidget>
 #include "realimage.h"
-#include <QPainter>
-#include <QFrame>
 
-
-class Image : public QFrame
+class Image : public QWidget
 {
 public:
     explicit Image(QWidget *parent = nullptr);
-    //Image(QSize size, QString path, QFrame *parent = nullptr);
-    QPixmap pixmap;
-    QSize size;
     void draw();
 protected:
-    //void paintEvent(QPaintEvent *) override;
     RealImage* realImage;
 signals:
 
