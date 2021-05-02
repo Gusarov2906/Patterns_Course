@@ -3,33 +3,18 @@
 RealImage::RealImage(int id, QSize size, QString path, QWidget* parent): QLabel(parent)
 {
     this->id = id;
-    this->size = size;
     this->setMinimumSize(size);
     this->setMaximumSize(size);
     this->path = path;
 
     //this->setFocusPolicy(Qt::NoFocus);
-    //this->pixmap = QPixmap(size);
-    //this->pixmap.fill(Qt::black);
-    //this->setPixmap(pixmap);
-    //this->setAttribute(Qt::WA_DeleteOnClose);
-    //this->show();
-}
-
-RealImage::RealImage(int id, QSize size, QPixmap pixmap, QString path, QWidget* parent): QLabel(parent)
-{
-    this->id = id;
-    this->size = size;
-    this->setMinimumSize(size);
-    this->setMaximumSize(size);
-    this->path = path;
-    this->pixmap = pixmap;
+    this->pixmap = QPixmap(size);
     this->setPixmap(pixmap);
     //this->setAttribute(Qt::WA_DeleteOnClose);
     //this->show();
 }
 
-void RealImage::draw(int x, int y)
+void RealImage::draw()
 {
     //this->move(x,y);
     this->pixmap = QPixmap(":/Images/moon.png");
@@ -54,5 +39,5 @@ QString RealImage::getPath()
 
 QSize RealImage::getSize()
 {
-    return this->size;
+    return this->size();
 }

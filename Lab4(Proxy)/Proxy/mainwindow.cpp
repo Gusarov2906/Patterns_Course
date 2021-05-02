@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "image.h"
+#include "proxyimage.h"
 #include <QHBoxLayout>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->dragFrame->getImage(0)->move(200,0);
     ui->dragFrame->addImage(QSize(64,64),"bbb");
     ui->dragFrame->getImage(0)->move(290,0);
-    ui->dragFrame->getImage(0)->draw(0,0);
+    ui->dragFrame->getImage(0)->draw();
 }
 
 

@@ -3,23 +3,21 @@
 
 #include <QWidget>
 #include <QLabel>
+#include <abstractimage.h>
 
-class RealImage : public QLabel
+class RealImage : public AbstractImage, public QLabel
 {
 public:
     RealImage(int id, QSize size, QString path, QWidget *parent = nullptr);
-    RealImage(int id, QSize size, QPixmap pixmap, QString path, QWidget *parent = nullptr);
-    void draw(int x, int y);
     QPixmap getPixmap();
+    void draw();
     int getId();
     QSize getSize();
     QString getPath();
-    bool isReal = true;
 protected:
     int id;
-    QPixmap pixmap;
-    QSize size;
     QString path;
+    QPixmap pixmap;
 signals:
 };
 

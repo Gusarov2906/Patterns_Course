@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 
 #include <QApplication>
-#include "image.h"
+#include "proxyimage.h"
 
 int main(int argc, char *argv[])
 {

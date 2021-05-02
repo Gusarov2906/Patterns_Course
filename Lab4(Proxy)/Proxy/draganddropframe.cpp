@@ -10,11 +10,11 @@ DragAndDropFrame::DragAndDropFrame(QWidget *parent) : QFrame(parent)
 
 void DragAndDropFrame::addImage(QSize size, QString path)
 {
-    this->images.push_back(new Image(this->id, size, path, this));
+    this->images.push_back(new ProxyImage(this->id, size, path, this));
     this->id++;
 }
 
-void DragAndDropFrame::addImage(Image* img)
+void DragAndDropFrame::addImage(ProxyImage* img)
 {
     this->images.push_back(img);
     this->id++;
@@ -25,12 +25,12 @@ void DragAndDropFrame::deleteImage(int index)
     this->images.remove(index);
 }
 
-void DragAndDropFrame::changeImage(int index, Image *img)
+void DragAndDropFrame::changeImage(int index, ProxyImage *img)
 {
     this->images[index] = img;
 }
 
-Image* DragAndDropFrame::getImage(int index)
+ProxyImage* DragAndDropFrame::getImage(int index)
 {
     return this->images[index];
 }
@@ -53,6 +53,7 @@ DragAndDropFrame::~DragAndDropFrame()
     }
 }
 
+/*
 void DragAndDropFrame::dragEnterEvent(QDragEnterEvent *event)
 {
     if (event->mimeData()->hasFormat("application/my_img")) {
@@ -96,7 +97,7 @@ void DragAndDropFrame::dropEvent(QDropEvent *event)
 
         dataStream >> pixmap >> size >> path >> offset;
 //        this->getImage(this->getIndexById(this->tmpId));
-        Image *img = new Image(this->tmpId,size,pixmap,path,this);
+        ProxyImage *img = new ProxyImage(this->tmpId,size,pixmap,path,this);
         img->move(event->pos() - offset);
         this->changeImage(this->tmpId,img);
 
@@ -120,35 +121,35 @@ void DragAndDropFrame::dropEvent(QDropEvent *event)
 
 void DragAndDropFrame::mousePressEvent(QMouseEvent *event)
 {
-    Image *child = static_cast<Image*>(childAt(event->pos()));
+    ProxyImage *child = static_cast<ProxyImage*>(childAt(event->pos()));
     if (!child)
         return;
 
     this->tmpId = child->getId();
 
-    QPixmap pixmap = child->getPixmap();
+    //QPixmap pixmap = child->getPixmap();
     QSize size = child->getSize();
     QString path = child->getPath();
 
     QByteArray itemData;
     QDataStream dataStream(&itemData, QIODevice::WriteOnly);
-    dataStream << pixmap << size << path << QPoint(event->pos() - child->pos());
+    //dataStream << pixmap << size << path << QPoint(event->pos() - child->pos());
 
     QMimeData *mimeData = new QMimeData;
     mimeData->setData("application/my_img", itemData);
 
     QDrag *drag = new QDrag(this);
     drag->setMimeData(mimeData);
-    drag->setPixmap(pixmap);
+    //drag->setPixmap(pixmap);
     drag->setHotSpot(event->pos() - child->pos());
 
-    QPixmap tempPixmap = pixmap;
+    //QPixmap tempPixmap = pixmap;
     QPainter painter;
-    painter.begin(&tempPixmap);
-    painter.fillRect(pixmap.rect(), QColor(239,239,239));
+    //painter.begin(&tempPixmap);
+    //painter.fillRect(pixmap.rect(), QColor(239,239,239));
     painter.end();
 
-    child->setPixmap(tempPixmap);
+    //child->setPixmap(tempPixmap);
 
     if (drag->exec(Qt::CopyAction | Qt::MoveAction, Qt::CopyAction) == Qt::MoveAction) {
         //child->close();
@@ -157,6 +158,8 @@ void DragAndDropFrame::mousePressEvent(QMouseEvent *event)
         //this->deleteImage(this->getIndexById(this->tmpId));
     } else {
         child->show();
-        child->setPixmap(pixmap);
+       // child->setPixmap(pixmap);
     }
+
 }
+*/
