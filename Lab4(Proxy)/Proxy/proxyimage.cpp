@@ -7,15 +7,11 @@ ProxyImage::ProxyImage(int id, QSize size, QString path, QWidget* parent): QLabe
     this->setMinimumSize(size);
     this->setMaximumSize(size);
     this->path = path;
-    //this->pixmap = QPixmap(size);
-    //this->pixmap.fill(QColor(255, 255, 0));
-    //this->setPixmap(pixmap);
     QPalette pal(palette());
     pal.setColor(QPalette::Background, Qt::black);
     this->setAutoFillBackground(true);
     this->setPalette(pal);
     this->realImage = 0;
-    //this->setAttribute(Qt::WA_DeleteOnClose);
     this->show();
 }
 
@@ -29,9 +25,7 @@ ProxyImage::ProxyImage(int id, QSize size, QPixmap pixmap, QString path, QWidget
     pal.setColor(QPalette::Background, Qt::black);
     this->setAutoFillBackground(true);
     this->setPalette(pal);
-    //this->pixmap = pixmap;
     this->setPixmap(pixmap);
-    //this->setAttribute(Qt::WA_DeleteOnClose);
     this->show();
 }
 
@@ -39,14 +33,9 @@ void ProxyImage::draw()
 {
     if(!this->realImage)
     {
-        //isShown = true;
-        this->realImage = new RealImage(this->id, QSize(64,64), this->path, this);
+        this->realImage = new RealImage(this->id, this->size(), this->path, this);
         this->realImage->draw();
-        this->setLayout(new QVBoxLayout());
-        this->layout()->addWidget(realImage);
-        //this->pixmap = QPixmap(0,0);
-        //this->setPixmap(pixmap);
-        //this->hide();
+        this->setPalette(style()->standardPalette());
     }
 }
 
@@ -65,9 +54,32 @@ QSize ProxyImage::getSize()
     return this->size();
 }
 
-//QPixmap Image::getPixmap()
-//{
-//    return this->pixmap;
-//}
+RealImage* ProxyImage::getRealImage()
+{
+    return this->realImage;
+}
 
+void ProxyImage::mousePressEvent(QMouseEvent *event)
+{
+    switch (event->button()) {
+       case Qt::LeftButton:
+       {
+           this->oldPos = event->pos();
+           break;
+       }
+       case Qt::RightButton:
+       {
+           this->draw();
+           break;
+       }
+        default:
+            break;
+    }
+}
+
+void ProxyImage::mouseMoveEvent(QMouseEvent *event)
+{
+    QPoint delta = QPoint(event->pos() - this->oldPos);
+    this->move(this->x()+delta.x(),this->y()+delta.y());
+}
 

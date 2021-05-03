@@ -10,16 +10,16 @@ CONFIG += c++11
 
 SOURCES += \
     abstractimage.cpp \
-    draganddropframe.cpp \
     main.cpp \
     mainwindow.cpp \
+    myframe.cpp \
     proxyimage.cpp \
     realimage.cpp
 
 HEADERS += \
     abstractimage.h \
-    draganddropframe.h \
     mainwindow.h \
+    myframe.h \
     proxyimage.h \
     realimage.h
 

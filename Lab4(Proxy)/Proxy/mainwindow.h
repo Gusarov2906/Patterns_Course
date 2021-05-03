@@ -20,7 +20,12 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+private slots:
+    void on_createButton_clicked();
+    void on_chooseImage_clicked();
+
 private:
     Ui::MainWindow *ui;
+    QString path;
 };
 #endif // MAINWINDOW_H

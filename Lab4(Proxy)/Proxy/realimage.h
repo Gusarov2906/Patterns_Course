@@ -10,10 +10,11 @@ class RealImage : public AbstractImage, public QLabel
 public:
     RealImage(int id, QSize size, QString path, QWidget *parent = nullptr);
     QPixmap getPixmap();
-    void draw();
-    int getId();
-    QSize getSize();
-    QString getPath();
+    void draw() override;
+    int getId() override;
+    QSize getSize() override;
+    QString getPath() override;
+    const bool isReal = true;
 protected:
     int id;
     QString path;

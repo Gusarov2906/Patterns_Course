@@ -1,5 +1,5 @@
-#ifndef DRAGANDDROPFRAME_H
-#define DRAGANDDROPFRAME_H
+#ifndef MYFRAME_H
+#define MYFRAME_H
 
 #include <QFrame>
 #include "proxyimage.h"
@@ -9,12 +9,12 @@ class QDragEnterEvent;
 class QDropEvent;
 QT_END_NAMESPACE
 
-class DragAndDropFrame: public QFrame
+class MyFrame: public QFrame
 {
     Q_OBJECT
 public:
-    explicit DragAndDropFrame(QWidget *parent = nullptr);
-    ~DragAndDropFrame();
+    explicit MyFrame(QWidget *parent = nullptr);
+    ~MyFrame();
     void addImage(QSize size, QString path);
     void addImage(ProxyImage* img);
     void changeImage(int index,ProxyImage* img);
@@ -25,10 +25,6 @@ protected:
     int tmpId;
     QVector<ProxyImage*> images;
     int getIndexById(int id);
-    void dragEnterEvent(QDragEnterEvent *event) override{};
-    void dragMoveEvent(QDragMoveEvent *event) override{};
-    void dropEvent(QDropEvent *event) override{};
-    void mousePressEvent(QMouseEvent *event) override{};
 };
 
-#endif // DRAGANDDROPFRAME_H
+#endif // MYFRAME_H
