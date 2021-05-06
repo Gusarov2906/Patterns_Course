@@ -9,3 +9,8 @@ int TextReplacing::interpret(QString *context)
     }
     return count;
 }
+
+TextReplacing::~TextReplacing()
+{
+
+}

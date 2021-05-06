@@ -13,6 +13,7 @@ class TextReplacing : public IReplacing
 {
 public:
     TextReplacing(){};
+    ~TextReplacing();
     QVector<IReplacing*> replacings;
     int interpret(QString* context);
 };

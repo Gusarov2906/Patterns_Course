@@ -3,6 +3,12 @@
 int NewLinesReplacing::interpret(QString *context)
 {
     int size = context->size();
-    *context = context->replace("\n\n", "\n");
+    int oldSize;
+    do
+    {
+       oldSize = context->size();
+       *context = context->replace("\n\n", "\n");
+    }
+    while(context->size() != oldSize);
     return size - context->size();
 }

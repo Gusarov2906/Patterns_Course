@@ -3,6 +3,12 @@
 int DoubleSpaceReplacing::interpret(QString *context)
 {
     int size = context->size();
-    *context = context->replace("  ", " ");
+    int oldSize;
+    do
+    {
+       oldSize = context->size();
+       *context = context->replace("  ", " ");
+    }
+    while(context->size() != oldSize);
     return size - context->size();
 }
